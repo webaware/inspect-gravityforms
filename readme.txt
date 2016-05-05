@@ -1,6 +1,6 @@
-=== Inspect GravityForms ===
+=== Inspect Gravity Forms ===
 Contributors: webaware
-Plugin Name: Inspect GravityForms
+Plugin Name: Inspect Gravity Forms
 Plugin URI: https://wordpress.org/plugins/inspect-gravityforms/
 Author URI: http://webaware.com.au/
 Donate link: http://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms
@@ -48,7 +48,7 @@ With more tests to come. It does it by adding a set of icons next to the actions
 
 Because you haven't asked me for it. So [ask me](https://wordpress.org/support/plugin/inspect-gravityforms)!
 
-If you want to add a custom integration icon, you can hook the filter hook `inspect-gravityforms-icon-list` and add it yourself.
+If you want to add a custom integration icon, you can hook the filter hook `inspect_gravityforms_icon_list` and add it yourself.
 
 = Will this plugin work without installing Gravity Forms? =
 
@@ -68,6 +68,6 @@ No. This plugin integrates with Gravity Forms. You must purchase and install a c
 
 == Changelog ==
 
-### 1.0.0, soon...
+### 1.0.0, 2016-05-05
 
 * initial public release

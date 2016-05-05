@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Inspect GravityForms
+Plugin Name: Inspect Gravity Forms
 Plugin URI: https://wordpress.org/plugins/inspect-gravityforms/
 Description: Add-on to Gravity Forms that shows some form info in the forms list
 Version: 1.0.0
