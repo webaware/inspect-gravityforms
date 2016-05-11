@@ -16,7 +16,7 @@ class GFInspectPlugin {
 	private $formData			= null;					// current form data collected from form
 
 	// minimum versions required
-	const MIN_VERSION_GF		= '1.8.8';
+	const MIN_VERSION_GF		= '1.9.10';
 
 	/**
 	* static method for getting the instance of this singleton object
@@ -86,8 +86,14 @@ class GFInspectPlugin {
 		$feeds = GFAPI::get_feeds(null, $form_id);
 
 		$icons = array();
-		if (GFCommon::has_credit_card_field($form)) {
+
+		$ccfields = GFFormsModel::get_fields_by_type($form, 'creditcard', true);
+		if (!empty($ccfields)) {
 			$icons['credit-card-field'] = self::buildIconHTML(esc_attr_x('Credit Card field', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card');
+
+			if (!empty($ccfields[0]->forceSSL)) {
+				$icons['force-ssl'] = self::buildIconHTML(esc_attr_x('Force SSL', 'form list icon', 'inspect-gravityforms'), 'fa fa-lock');
+			}
 		}
 
 		// find what feeds the form has
