@@ -6,8 +6,8 @@ Author URI: http://webaware.com.au/
 Donate link: http://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms
 Tags: gravityforms, gravity forms, gravity
 Requires at least: 4.2
-Tested up to: 4.5.1
-Stable tag: 1.0.0
+Tested up to: 4.5.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,18 @@ No. This plugin integrates with Gravity Forms. You must purchase and install a c
 
 * [Fork me on GitHub](https://github.com/webaware/inspect-gravityforms/)
 
+== Upgrade Notice ==
+
+= 1.1.0 =
+
+minimum Gravity Forms version is now 1.9.10; indicate when credit card field forces SSL (https) page load
+
 == Changelog ==
+
+### 1.1.0, 2016-05-11
+
+* changed: minimum Gravity Forms version is now 1.9.10
+* added: indicate when credit card field forces SSL (https) page load
 
 ### 1.0.0, 2016-05-05
 
