@@ -39,6 +39,11 @@ class GFInspectPlugin {
 		add_action('init', array($this, 'loadTextDomain'));
 		add_filter('plugin_row_meta', array($this, 'pluginDetailsLinks'), 10, 2);
 		add_action('admin_print_styles-toplevel_page_gf_edit_forms', array($this, 'adminCSS'));
+
+		add_filter('gform_form_list_columns', array($this, 'gformsFormListColumns'));
+		add_action('gform_form_list_column_inspectgf_icons', array($this, 'gformsColumnInspectGF'));
+
+		// this action is removed if custom form list columns are supported (GF 2.0+)
 		add_filter('gform_form_actions', array($this, 'gformsFormActions'), 100, 2);
 	}
 
@@ -76,12 +81,53 @@ class GFInspectPlugin {
 	}
 
 	/**
+	* insert custom form list column for Gravity Forms 2.0+
+	* @param array $columns
+	* @return array
+	*/
+	public function gformsFormListColumns($columns) {
+		$columns['inspectgf_icons'] = esc_html_x('Inspector', 'forms list column name', 'inspect-gravityforms');
+
+		// no need to add icons to form actions when we can add a column
+		remove_filter('gform_form_actions', array($this, 'gformsFormActions'), 100, 2);
+
+		return $columns;
+	}
+
+	/**
+	* content for custom form list column
+	* @param object $form
+	*/
+	public function gformsColumnInspectGF($form) {
+		$icons = $this->getFormIcons($form->id);
+
+		if (!empty($icons)) {
+			printf('<span class="inspectgf-icons">%s</span>', implode(' ', $icons));
+		}
+	}
+
+	/**
 	* add icons to form actions, showing which forms have credit card fields and feeds
 	* @param array $actions
 	* @param int $form_id
 	* @return array
 	*/
 	public function gformsFormActions($actions, $form_id) {
+		$icons = $this->getFormIcons($form_id);
+
+		if (!empty($icons)) {
+			$actions['inspectgf-icons'] = sprintf('<span class="inspectgf-icons">%s</span>', implode(' ', $icons));
+		}
+
+		return $actions;
+	}
+
+	/**
+	* get icons for form
+	* @param int $form_id
+	* @return array
+	*/
+	protected function getFormIcons($form_id) {
 		$form = GFFormsModel::get_form_meta($form_id);
 		$feeds = GFAPI::get_feeds(null, $form_id);
 
@@ -149,11 +195,7 @@ class GFInspectPlugin {
 		// allow hookers to change the list, e.g. add their own icons
 		$icons = apply_filters('inspect_gravityforms_icon_list', $icons, $form_id, $form, $feeds);
 
-		if (!empty($icons)) {
-			$actions['inspectgf-icons'] = sprintf('<span class="inspectgf-icons">%s</span>', implode(' ', $icons));
-		}
-
-		return $actions;
+		return $icons;
 	}
 
 	/**
