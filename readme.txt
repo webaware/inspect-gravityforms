@@ -7,7 +7,7 @@ Donate link: http://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity
 Tags: gravityforms, gravity forms, gravity
 Requires at least: 4.2
 Tested up to: 4.5.2
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,17 +70,15 @@ No. This plugin integrates with Gravity Forms. You must purchase and install a c
 
 == Upgrade Notice ==
 
-= 1.1.0 =
+= 1.2.0 =
 
-minimum Gravity Forms version is now 1.9.10; indicate when credit card field forces SSL (https) page load
+add an icon for every type of feed encountered, with feed slug if not specifically handled; use a custom column for icons in Gravity Forms 2.0+
 
 == Changelog ==
 
-### 1.1.0, 2016-05-11
+The full changelog for Inspect Gravity Forms can be found [on GitHub](https://github.com/webaware/inspect-gravityforms/blob/master/changelog.md). Recent entries:
 
-* changed: minimum Gravity Forms version is now 1.9.10
-* added: indicate when credit card field forces SSL (https) page load
+### 1.2.0, 2016-06-18
 
-### 1.0.0, 2016-05-05
-
-* initial public release
+* changed: insert a custom column into forms list instead of using form actions (GF 2.0+ only)
+* changed: add an icon for every type of feed encountered, with feed slug if not specifically handled
