@@ -5,6 +5,7 @@
 ### 1.2.0, soon...
 
 * changed: insert a custom column into forms list instead of using form actions (GF 2.0+ only)
+* changed: add an icon for every type of feed encountered, with feed slug if not specifically handled
 
 ### 1.1.0, 2016-05-11
 

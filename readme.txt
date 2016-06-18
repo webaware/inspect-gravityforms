@@ -20,7 +20,8 @@ Add-on to Gravity Forms that shows some form info in the forms list
 This add-on lets you quickly see what a form is doing, whether it has:
 
 * credit card field
-* user registration feed
+* User Registration feed
+* Coupon
 * PayPal
 * Authorize.Net
 * Stripe
@@ -29,6 +30,7 @@ This add-on lets you quickly see what a form is doing, whether it has:
 * MailChimp
 * Campaign Monitor
 * Help Scout
+* any other registered feeds using the Gravity Forms Add-on framework
 
 With more tests to come. It does it by adding a set of icons next to the actions links under each form name in the forms list.
 

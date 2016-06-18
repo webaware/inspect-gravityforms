@@ -144,52 +144,63 @@ class GFInspectPlugin {
 
 		// find what feeds the form has
 		if (!is_wp_error($feeds)) {
-
-			$feed_slugs = array();
 			foreach ($feeds as $feed) {
-				$feed_slugs[$feed['addon_slug']] = 1;
-			}
+				$addon_slug = $feed['addon_slug'];
+				if (!isset($icons[$addon_slug])) {
 
-			if (isset($feed_slugs['gravityformspaypal'])) {
-				$icons['gravityformspaypal'] = self::buildIconHTML(esc_attr_x('PayPal Standard feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-paypal');
-			}
+					switch ($addon_slug) {
 
-			if (isset($feed_slugs['gravityformspaypalpaymentspro'])) {
-				$icons['gravityformspaypalpaymentspro'] = self::buildIconHTML(esc_attr_x('PayPal Payments Pro feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-paypal');
-			}
+						case 'gravityformspaypal':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('PayPal Standard', 'form list icon', 'inspect-gravityforms'), 'fa fa-paypal');
+							break;
 
-			if (isset($feed_slugs['gravityformsauthorizenet'])) {
-				$icons['gravityformsauthorizenet'] = self::buildIconHTML(esc_attr_x('Authorize.Net feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
-			}
+						case 'gravityformspaypalpaymentspro':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('PayPal Payments Pro', 'form list icon', 'inspect-gravityforms'), 'fa fa-paypal');
+							break;
 
-			if (isset($feed_slugs['gravityformsstripe'])) {
-				$icons['gravityformsstripe'] = self::buildIconHTML(esc_attr_x('Stripe feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
-			}
+						case 'gravityformsauthorizenet':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('Authorize.Net', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
+							break;
 
-			if (isset($feed_slugs['gravityforms-eway-pro'])) {
-				$icons['gravityforms-eway-pro'] = self::buildIconHTML(esc_attr_x('eWAY feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
-			}
+						case 'gravityformsstripe':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('Stripe', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
+							break;
 
-			if (isset($feed_slugs['gravityformsuserregistration'])) {
-				$icons['gravityformsuserregistration'] = self::buildIconHTML(esc_attr_x('User Registration feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-user-plus');
-			}
+						case 'gravityforms-eway-pro':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('eWAY', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
+							break;
 
-			if (isset($feed_slugs['gravityformscampaignmonitor'])) {
-				$icons['gravityformscampaignmonitor'] = self::buildIconHTML(esc_attr_x('Campaign Monitor feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-bullhorn');
-			}
+						case 'gravityformsuserregistration':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('User Registration', 'form list icon', 'inspect-gravityforms'), 'fa fa-user-plus');
+							break;
 
-			if (isset($feed_slugs['gravityformsmailchimp'])) {
-				$icons['gravityformsmailchimp'] = self::buildIconHTML(esc_attr_x('MailChimp feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-bullhorn');
-			}
+						case 'gravityformscampaignmonitor':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('Campaign Monitor', 'form list icon', 'inspect-gravityforms'), 'fa fa-bullhorn');
+							break;
 
-			if (isset($feed_slugs['gravityformshelpscout'])) {
-				$icons['gravityformshelpscout'] = self::buildIconHTML(esc_attr_x('Help Scout feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-question-circle');
-			}
+						case 'gravityformsmailchimp':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('MailChimp', 'form list icon', 'inspect-gravityforms'), 'fa fa-bullhorn');
+							break;
 
+						case 'gravityformshelpscout':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('Help Scout', 'form list icon', 'inspect-gravityforms'), 'fa fa-question-circle');
+							break;
+
+						case 'gravityformscoupons':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('Coupon', 'form list icon', 'inspect-gravityforms'), 'fa fa-money');
+							break;
+
+						default:
+							$icons[$addon_slug] = self::buildIconHTML($addon_slug, 'fa fa-filter');
+							break;
+
+					}
+				}
+			}
 		}
 
 		if ($this->hasDpsPxPayFeed($form_id)) {
-			$icons['gravity-forms-dps-pxpay'] = self::buildIconHTML(esc_attr_x('DPS PxPay feed', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
+			$icons['gravity-forms-dps-pxpay'] = self::buildIconHTML(esc_attr_x('DPS PxPay', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
 		}
 
 		// allow hookers to change the list, e.g. add their own icons
