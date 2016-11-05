@@ -2,20 +2,20 @@
 Contributors: webaware
 Plugin Name: Inspect Gravity Forms
 Plugin URI: https://wordpress.org/plugins/inspect-gravityforms/
-Author URI: http://webaware.com.au/
-Donate link: http://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms
+Author URI: https://shop.webaware.com.au/
+Donate link: https://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms
 Tags: gravityforms, gravity forms, gravity
 Requires at least: 4.2
 Tested up to: 4.5.2
 Stable tag: 1.2.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Add-on to Gravity Forms that shows some form info in the forms list
 
 == Description ==
 
-[Gravity Forms](http://webaware.com.au/get-gravity-forms) is such a versatile form builder that you can quickly accumulate a big list of forms on a busy website. Some of those forms will integrate with mailing lists, some with credit card payment gateways, some with Help Scout, some manage user registrations, some... and before you know it, you can't easily find that form you're looking for.
+[Gravity Forms](https://webaware.com.au/get-gravity-forms) is such a versatile form builder that you can quickly accumulate a big list of forms on a busy website. Some of those forms will integrate with mailing lists, some with credit card payment gateways, some with Help Scout, some manage user registrations, some... and before you know it, you can't easily find that form you're looking for.
 
 This add-on lets you quickly see what a form is doing, whether it has:
 
@@ -36,13 +36,13 @@ With more tests to come. It does it by adding a set of icons next to the actions
 
 = Requirements =
 
-* you need to install the [Gravity Forms](http://webaware.com.au/get-gravity-forms) plugin
+* you need to install the [Gravity Forms](https://webaware.com.au/get-gravity-forms) plugin
 
 == Installation ==
 
 1. Either install automatically through the WordPress admin, or download the .zip file, unzip to a folder, and upload the folder to your /wp-content/plugins/ directory. Read [Installing Plugins](https://codex.wordpress.org/Managing_Plugins#Installing_Plugins) in the WordPress Codex for details.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Install and activate the [Gravity Forms](http://webaware.com.au/get-gravity-forms) plugin.
+3. Install and activate the [Gravity Forms](https://webaware.com.au/get-gravity-forms) plugin.
 
 == Frequently Asked Questions ==
 
@@ -54,7 +54,7 @@ If you want to add a custom integration icon, you can hook the filter hook `insp
 
 = Will this plugin work without installing Gravity Forms? =
 
-No. This plugin integrates with Gravity Forms. You must purchase and install a copy of the [Gravity Forms](http://webaware.com.au/get-gravity-forms) plugin too.
+No. This plugin integrates with Gravity Forms. You must purchase and install a copy of the [Gravity Forms](https://webaware.com.au/get-gravity-forms) plugin too.
 
 == Screenshots ==
 

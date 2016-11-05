@@ -62,7 +62,7 @@ class GFInspectPlugin {
 			$links[] = sprintf('<a href="https://wordpress.org/support/plugin/inspect-gravityforms" target="_blank">%s</a>', _x('Get help', 'plugin details links', 'inspect-gravityforms'));
 			$links[] = sprintf('<a href="https://wordpress.org/plugins/inspect-gravityforms/" target="_blank">%s</a>', _x('Rating', 'plugin details links', 'inspect-gravityforms'));
 			$links[] = sprintf('<a href="https://translate.wordpress.org/projects/wp-plugins/inspect-gravityforms" target="_blank">%s</a>', _x('Translate', 'plugin details links', 'inspect-gravityforms'));
-			$links[] = sprintf('<a href="http://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms" target="_blank">%s</a>', _x('Donate', 'plugin details links', 'inspect-gravityforms'));
+			$links[] = sprintf('<a href="https://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms" target="_blank">%s</a>', _x('Donate', 'plugin details links', 'inspect-gravityforms'));
 		}
 
 		return $links;
