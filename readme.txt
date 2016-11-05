@@ -6,8 +6,8 @@ Author URI: https://shop.webaware.com.au/
 Donate link: https://shop.webaware.com.au/donations/?donation_for=Inspect+Gravity+Forms
 Tags: gravityforms, gravity forms, gravity
 Requires at least: 4.2
-Tested up to: 4.5.2
-Stable tag: 1.2.0
+Tested up to: 4.7
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,15 +70,14 @@ No. This plugin integrates with Gravity Forms. You must purchase and install a c
 
 == Upgrade Notice ==
 
-= 1.2.0 =
+= 1.3.0 =
 
-add an icon for every type of feed encountered, with feed slug if not specifically handled; use a custom column for icons in Gravity Forms 2.0+
+show an icon for Zapier feeds
 
 == Changelog ==
 
 The full changelog for Inspect Gravity Forms can be found [on GitHub](https://github.com/webaware/inspect-gravityforms/blob/master/changelog.md). Recent entries:
 
-### 1.2.0, 2016-06-18
+### 1.3.0, 2016-11-05
 
-* changed: insert a custom column into forms list instead of using form actions (GF 2.0+ only)
-* changed: add an icon for every type of feed encountered, with feed slug if not specifically handled
+* added: show an icon for Zapier feeds
