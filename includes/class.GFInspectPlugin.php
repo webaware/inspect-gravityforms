@@ -203,6 +203,10 @@ class GFInspectPlugin {
 			$icons['gravity-forms-dps-pxpay'] = self::buildIconHTML(esc_attr_x('DPS PxPay', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
 		}
 
+		if ($this->hasZapierFeed($form_id)) {
+			$icons['gravityformszapier'] = self::buildIconHTML(esc_attr_x('Zapier', 'form list icon', 'inspect-gravityforms'), 'fa fa-asterisk');
+		}
+
 		// allow hookers to change the list, e.g. add their own icons
 		$icons = apply_filters('inspect_gravityforms_icon_list', $icons, $form_id, $form, $feeds);
 
@@ -236,6 +240,21 @@ class GFInspectPlugin {
 			'meta_key'			=> '_gfdpspxpay_form',
 			'meta_value'		=> $form_id,
 		));
+
+		return !empty($feeds);
+	}
+
+	/**
+	* check for Gravity Forms Zapier feed (not on add-on framework)
+	* @param int $form_id
+	* @return bool
+	*/
+	protected function hasZapierFeed($form_id) {
+		if (!class_exists('GFZapierData', false)) {
+			return false;
+		}
+
+		$feeds = GFZapierData::get_feed_by_form($form_id);
 
 		return !empty($feeds);
 	}

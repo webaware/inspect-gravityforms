@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 1.3.0, 2016-11-05
+
+* added: show an icon for Zapier feeds
+
 ### 1.2.0, 2016-06-18
 
 * changed: insert a custom column into forms list instead of using form actions (GF 2.0+ only)
