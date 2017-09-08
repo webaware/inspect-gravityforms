@@ -3,14 +3,14 @@
 Plugin Name: Inspect Gravity Forms
 Plugin URI: https://wordpress.org/plugins/inspect-gravityforms/
 Description: Add-on to Gravity Forms that shows some form info in the forms list
-Version: 1.3.0
+Version: 1.3.1-dev
 Author: WebAware
 Author URI: https://shop.webaware.com.au/
 Text Domain: inspect-gravityforms
 */
 
 /*
-copyright (c) 2016 WebAware Pty Ltd (email : support@webaware.com.au)
+copyright (c) 2016-2017 WebAware Pty Ltd (email : support@webaware.com.au)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
