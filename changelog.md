@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 1.3.1, soon...
+
+* changed: DPS PxPay test now only checks for a matching add-on framework feed
+
 ### 1.3.0, 2016-11-05
 
 * added: show an icon for Zapier feeds

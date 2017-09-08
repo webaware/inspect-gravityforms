@@ -170,6 +170,10 @@ class GFInspectPlugin {
 							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('eWAY', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
 							break;
 
+						case 'gravity-forms-dps-pxpay':
+							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('DPS PxPay', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
+							break;
+
 						case 'gravityformsuserregistration':
 							$icons[$addon_slug] = self::buildIconHTML(esc_attr_x('User Registration', 'form list icon', 'inspect-gravityforms'), 'fa fa-user-plus');
 							break;
@@ -199,10 +203,6 @@ class GFInspectPlugin {
 			}
 		}
 
-		if ($this->hasDpsPxPayFeed($form_id)) {
-			$icons['gravity-forms-dps-pxpay'] = self::buildIconHTML(esc_attr_x('DPS PxPay', 'form list icon', 'inspect-gravityforms'), 'fa fa-credit-card-alt');
-		}
-
 		if ($this->hasZapierFeed($form_id)) {
 			$icons['gravityformszapier'] = self::buildIconHTML(esc_attr_x('Zapier', 'form list icon', 'inspect-gravityforms'), 'fa fa-asterisk');
 		}
@@ -221,27 +221,6 @@ class GFInspectPlugin {
 	*/
 	protected static function buildIconHTML($title, $icon_class) {
 		return sprintf('<i class="%1$s" aria-hidden="true" title="%2$s"></i><span class="screen-reader-text">%2$s</span>', $icon_class, $title);
-	}
-
-	/**
-	* check for Gravity Forms DPS PxPay feed (not on add-on framework)
-	* @param int $form_id
-	* @return bool
-	*/
-	protected function hasDpsPxPayFeed($form_id) {
-		if (!defined('GFDPSPXPAY_TYPE_FEED')) {
-			return false;
-		}
-
-		$feeds = get_posts(array(
-			'post_type'			=> GFDPSPXPAY_TYPE_FEED,
-			'orderby'			=> 'none',
-			'posts_per_page'	=> 1,
-			'meta_key'			=> '_gfdpspxpay_form',
-			'meta_value'		=> $form_id,
-		));
-
-		return !empty($feeds);
 	}
 
 	/**
